@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello-world', function() {
+Route::get('/hello-world', function () {
     return 'Hello world!';
 });
 
@@ -35,4 +35,16 @@ Route::get('/hello/{name?}', 'HelloController@index');
 
 Route::post('/hello/{name?}', 'HelloController@render');
 
-Route::resource('pages', 'Admin\PagesController');
+/*Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function () {
+    Route::resource('pages', 'Admin\PagesController');
+});*/
+
+Route::prefix('admin')
+    ->middleware(['auth'])
+    ->group(function () {
+        Route::resource('pages', 'Admin\PagesController');
+    });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

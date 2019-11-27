@@ -1,8 +1,8 @@
 @component('admin.layouts.default')
 <h3>{{ $title }} <small>{{ $description }}</small></h3>
 
-<div class="panel panel-default">
-    <div class="panel-body">
+<div class="card">
+    <div class="card-body">
         {{ $slot }}
     </div>
 </div>

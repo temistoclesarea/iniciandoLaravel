@@ -84,6 +84,8 @@
                     Laravel
                 </div>
 
+                <a href="/admin/pages">Pages</a><br><br>
+
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
